@@ -4,10 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:taskati1/core/constants/app_assets.dart';
+import 'package:taskati1/core/features/Home/home.dart';
 import 'package:taskati1/core/features/Profile/widgets/custom_form_field.dart';
 import 'package:taskati1/core/features/Profile/widgets/image_container.dart';
 import 'package:taskati1/core/features/Profile/widgets/main_button.dart';
 import 'package:taskati1/core/functions/custom_snake_bar.dart';
+import 'package:taskati1/core/functions/navigations.dart';
+import 'package:taskati1/core/services/shared_pref.dart';
 import 'package:taskati1/core/styles/app_colors.dart';
 import 'package:taskati1/core/styles/text_styles.dart';
 import 'package:taskati1/core/widgets/filled_icon_button.dart';
@@ -102,9 +105,11 @@ class _CompleteProfileState extends State<CompleteProfile> {
       ),
       bottomNavigationBar:  Padding(
         padding: const EdgeInsets.only(left: 20, right: 20),
-        child: MainButton(title: "Let’s Start !", onTap: () {
+        child: MainButton(title: "Let’s Start !", onTap: () async{
                  if(path != null && namecontroller.text.isNotEmpty){
-                   
+                  await SharedPref.setuserinfo(namecontroller.text, path!);
+                  await SharedPref.setbool(SharedPref.boolkey, true);
+                  pushReplacement(context, Home());
                  }
                  else if(path == null&& namecontroller.text.isNotEmpty){
                    errordiag(context, "please enter your profile image");

@@ -3,8 +3,11 @@ import 'package:taskati1/core/constants/app_assets.dart';
 import 'package:taskati1/core/features/splash/splash_screen.dart';
 import 'package:taskati1/core/styles/app_colors.dart';
 import 'package:taskati1/core/styles/themes.dart';
+import 'package:taskati1/core/services/shared_pref.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SharedPref.init();
   runApp(const MainApp());
 }
 

@@ -3,9 +3,9 @@
 ## Preview  
 Here’s a quick look at the app interface:
 
-| Splash Screen | Complete Profile |
-|---------------|------------------|
-| <img src="images/splash.png" width="250"/> | <img src="images/profile.png" width="250"/> |
+| Splash Screen | Complete Profile | Home |
+|---------------|------------------|------|
+| <img src="images/splash.png" width="250"/> | <img src="images/profile.png" width="250"/> | <img src="images/home.png" width="250"/> |
 
 ---
 
@@ -25,6 +25,15 @@ Here’s a quick look at the app interface:
   - Delete or replace profile image easily.  
   - Enter and validate user name with custom form fields.  
   - Error handling with **custom snack bars** for missing inputs.  
+  - **SharedPreferences integration** to persist user photo and name across sessions.  
+
+- **Home Page**  
+  - Personalized greeting with stored user name and photo.  
+  - Daily progress indicator with percentage completion.  
+  - Horizontal date picker for weekly navigation.  
+  - Task filters: **All**, **In Progress**, **Completed**.  
+  - Task list with status labels and time ranges.  
+  - Floating action button to add new tasks.  
 
 - **Custom Widgets**  
   - `MainButton`, `SecondaryButton`, and `FilledIconButton` for consistent UI.  
