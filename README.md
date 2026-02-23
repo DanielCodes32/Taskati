@@ -5,7 +5,7 @@ Here’s a quick look at the app interface:
 
 | Splash Screen | Complete Profile | Home |
 |---------------|------------------|------|
-| <img src="images/splash.png" width="250"/> | <img src="images/profile.png" width="250"/> | <img src="images/home.png" width="250"/> |
+| <img src="images/splash.png" width="250"/> | <img src="images/profile.png" width="250"/> | <img src="images/Home.png" width="250"/> |
 
 ---
 
