@@ -3,9 +3,9 @@
 ## Preview  
 Here’s a quick look at the app interface:
 
-| Splash Screen | Complete Profile | Home |
-|---------------|------------------|------|
-| <img src="images/splash.png" width="250"/> | <img src="images/profile.png" width="250"/> | <img src="images/Home.png" width="250"/> |
+| Splash Screen | Complete Profile | Home | Add Task |
+|---------------|------------------|------|----------|
+| <img src="images/splash.png" width="250"/> | <img src="images/profile.png" width="250"/> | <img src="images/Home.png" width="250"/> | <img src="images/addtask.png" width="250"/> |
 
 ---
 
@@ -34,6 +34,12 @@ Here’s a quick look at the app interface:
   - Task filters: **All**, **In Progress**, **Completed**.  
   - Task list with status labels and time ranges.  
   - Floating action button to add new tasks.  
+
+- **Add Task Page**  
+  - Create new tasks with **title**, **description**, **date**, and **time range**.  
+  - Tasks are cached locally using **Hive** for persistence.  
+  - Unique task IDs ensure no overwriting of existing tasks.  
+  - Reactive task list updates instantly when new tasks are added.  
 
 - **Custom Widgets**  
   - `MainButton`, `SecondaryButton`, and `FilledIconButton` for consistent UI.  

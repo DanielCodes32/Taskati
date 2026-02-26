@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:taskati1/core/constants/app_assets.dart';
 import 'package:taskati1/core/features/Home/widgets/custom_tab.dart';
 import 'package:taskati1/core/features/Home/widgets/tasks_list_view.dart';
-import 'package:taskati1/core/styles/app_colors.dart';
 import 'package:taskati1/core/styles/text_styles.dart';
-import 'package:taskati1/core/widgets/svg_pic.dart';
 
 class TaskBuilder extends StatefulWidget {
   const TaskBuilder({super.key});

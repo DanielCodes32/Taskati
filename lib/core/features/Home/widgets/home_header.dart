@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:taskati1/core/constants/app_assets.dart';
 import 'package:taskati1/core/features/Profile/widgets/image_container.dart';
-import 'package:taskati1/core/services/shared_pref.dart';
+import 'package:taskati1/core/services/hive.dart';
 import 'package:taskati1/core/styles/app_colors.dart';
 import 'package:taskati1/core/styles/text_styles.dart';
 
@@ -25,12 +25,15 @@ class _HomeHeaderState extends State<HomeHeader> {
     getuserinfo();
 
   }
-   Future<void> getuserinfo() async{
-  name=SharedPref.getstring(SharedPref.namekey);
-    path=SharedPref.getstring(SharedPref.imagekey);
-    setState(() {});
-    
-  }
+   Future<void> getuserinfo() async {
+  final nameValue = await HiveHelper.getUserInfo(HiveHelper.namekey);
+  final pathValue = await HiveHelper.getUserInfo(HiveHelper.imagekey);
+
+  setState(() {
+    name = nameValue ?? '';
+    path = pathValue ?? '';
+  });
+}
   @override
   Widget build(BuildContext context) {
     return Row(

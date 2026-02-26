@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:hive_ce_flutter/adapters.dart';
 import 'package:taskati1/core/constants/app_assets.dart';
 import 'package:taskati1/core/features/splash/splash_screen.dart';
+import 'package:taskati1/core/services/hive.dart';
 import 'package:taskati1/core/styles/app_colors.dart';
 import 'package:taskati1/core/styles/themes.dart';
-import 'package:taskati1/core/services/shared_pref.dart';
+import 'package:taskati1/hive/hive_registrar.g.dart';
 
-void main() {
+void main() async{
   WidgetsFlutterBinding.ensureInitialized();
-  SharedPref.init();
+  WidgetsFlutterBinding.ensureInitialized();
+  await Hive.initFlutter();
+   Hive.registerAdapters();
+  await HiveHelper.init();
+  // await SharedPref.init();
   runApp(const MainApp());
 }
 
