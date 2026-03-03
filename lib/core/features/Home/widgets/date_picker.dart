@@ -4,9 +4,9 @@ import 'package:taskati1/core/styles/app_colors.dart';
 
 class HomeDatePicker extends StatefulWidget {
   const HomeDatePicker({
-    super.key,
+    super.key, required this.onDateChange,
   });
-
+final Function(DateTime) onDateChange;
   @override
   State<HomeDatePicker> createState() => _HomeDatePickerState();
 }
@@ -29,7 +29,7 @@ class _HomeDatePickerState extends State<HomeDatePicker> {
       selectionColor: AppColors.primaryColor,
       width: 64,
       height: 90,
-      onDateChange: (date) {},
+      onDateChange: widget.onDateChange,
     );
   }
 }

@@ -18,7 +18,7 @@ class CustomTab extends StatelessWidget {
           borderRadius: BorderRadius.circular(10),
           color: isactive
               ? AppColors.primaryColor
-              : AppColors.secondarycolor,
+              : Theme.of(context).cardColor,
         ),
         child: Center(
           child: Text(

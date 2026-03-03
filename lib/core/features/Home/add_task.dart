@@ -10,19 +10,31 @@ import 'package:taskati1/core/styles/text_styles.dart';
 import 'package:taskati1/core/widgets/svg_pic.dart';
 import 'package:taskati1/models/taskmodel.dart';
 
-class AddTask extends StatefulWidget {
-  const AddTask({super.key});
-
+class AddEditTask extends StatefulWidget {
+  const AddEditTask({super.key, this.taskmodel});
+final Taskmodel? taskmodel;
   @override
-  State<AddTask> createState() => _AddTaskState();
+  State<AddEditTask> createState() => _AddEditTaskState();
 }
 
-class _AddTaskState extends State<AddTask> { 
+class _AddEditTaskState extends State<AddEditTask> { 
   String date = DateFormat("dd MMM, yyyy").format(DateTime.now());
   String starttime = DateFormat("hh:mm a").format(DateTime.now());
   String endtime = DateFormat("hh:mm a").format(DateTime.now().add(const Duration(hours: 1)));
   final titlecontroler=TextEditingController();
   final decreptioncontroler=TextEditingController();
+  @override
+  void initState() {
+    
+    super.initState();
+    if(widget.taskmodel != null){
+      titlecontroler.text=widget.taskmodel?.title??'';
+      decreptioncontroler.text=widget.taskmodel?.description??'';
+      date=widget.taskmodel?.date??'';
+      starttime=widget.taskmodel?.starttime??'';
+      endtime=widget.taskmodel?.endtime??'';
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,7 +50,7 @@ class _AddTaskState extends State<AddTask> {
             height: 15,
           ),
         ),
-        title: Text("Add Task", style: TextStyles.title),
+        title: Text( widget.taskmodel==null?"Add Task":"Edit Task", style: TextStyles.title),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20),
@@ -99,9 +111,14 @@ class _AddTaskState extends State<AddTask> {
       ),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(20),
-        child: MainButton(title: "Add Task", onTap: () {
+        child: MainButton(title: widget.taskmodel==null?"Add Task":"Save", onTap: () {
+          if(widget.taskmodel==null){
           String key=DateTime.now().microsecondsSinceEpoch.toString();
           HiveHelper.settask(key, Taskmodel(id:key,title: titlecontroler.text, description: decreptioncontroler.text, date: date, starttime: starttime, endtime: endtime,iscompleted: false));
+          }
+          else{
+            HiveHelper.settask(widget.taskmodel!.id!, Taskmodel(id: widget.taskmodel!.id,title: titlecontroler.text, description: decreptioncontroler.text, date: date, starttime: starttime, endtime: endtime,iscompleted: false));
+          }
           Navigator.pop(context);
         }),
       ),

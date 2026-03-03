@@ -39,14 +39,7 @@ class CustomFormField extends StatelessWidget {
           minLines: maxlines == false ? 3 : 1,
           maxLines: maxlines == false ? null : 1,
 
-          decoration: InputDecoration(
-            filled: true,
-            fillColor: AppColors.backgroundColor,
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(15),
-              borderSide: BorderSide.none,
-            ),
-          ),
+          
         ),
       ],
     );

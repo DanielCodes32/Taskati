@@ -10,6 +10,7 @@ class HiveHelper {
   static  const String namekey = 'name';
   static  const String imagekey = 'image';
   static  const String boolkey = 'complete';
+  static  const String isdark = 'isDarkMode';
   static  const String taskboxname = 'tasks';
   static Future<void> init() async {
     userbox = await Hive.openBox(userBoxname);
@@ -31,4 +32,8 @@ class HiveHelper {
  static Taskmodel? gettask(String key)  {
   return taskbox.get(key);
 }
+static Future<void> deletetask(String key)  {
+  return taskbox.delete(key.toString());
+}
+
 }

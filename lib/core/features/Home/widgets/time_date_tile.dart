@@ -21,7 +21,7 @@ final Function()? onTap;
       child: Container(
         padding: EdgeInsets.all(16),
         decoration: BoxDecoration(
-          color: AppColors.backgroundColor,
+          color: Theme.of(context).cardColor,
           borderRadius: BorderRadius.circular(15),
             boxShadow: [
             customshadow()]
