@@ -4,7 +4,7 @@
 
 | Splash Screen | Complete Profile | Home | Add Task | Edit Profile | Edit Task |  
 |---------------|------------------|------|----------|--------------|-----------|  
-| <img src="images/splash.png" width="250"/> | <img src="images/profile.png" width="250"/> | <img src="images/Home.png" width="250"/> | <img src="images/addtask.png" width="250"/> | <img src="images/profile_page.png" width="250"/> | <img src="images/edit_task.png" width="250"/> |  
+| <img src="images/splash.png" width="250"/> | <img src="images/profile.png" width="250"/> | <img src="images/Home (2).png" width="250"/> | <img src="images/addtask.png" width="250"/> | <img src="images/profile_page.png" width="250"/> | <img src="images/edit_task.png" width="250"/> |  
 
 **Dark Theme Preview**  
 
